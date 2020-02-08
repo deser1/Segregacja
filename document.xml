@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Position_TopLeft>0</Position_TopLeft>
+	<Width>825</Width>
+	<Height>630</Height>
+	<Title>
+		<PosY>0</PosY>
+		<Text>WYSEGREGOWANE BUTELKI</Text>
+	</Title>
+	<BootleType>
+		<PosY>150</PosY>
+		<Item>
+			<Param id="0">NOWY ŻYWIEC</Param>
+			<Param id="1">STARY ŻYWIEC</Param>
+			<Param id="2">OKOCIM</Param>
+			<Param id="3">LIKWIDACJA</Param>
+			<Param id="4">GOLD</Param>
+			<Param id="5">CROWN</Param>
+			<Param id="6">ALASKA</Param>
+			<Param id="7">OBCE</Param>
+			<Param id="8">MIX</Param>
+			<Param id="9">SKRZYNKI DO LIKWIDACJI</Param>
+		</Item>
+	</BootleType>
+	<Shift>
+		<Title>ZMIANA</Title>
+		<TitleNoNumber>ZMIANA ....</TitleNoNumber>
+		<PosY>330</PosY>
+		<Number>
+			<Param id="0">I</Param>
+			<Param id="1">II</Param>
+			<Param id="2">III</Param>
+		</Number>
+		<DefaultOption>0</DefaultOption>
+		<DefaultCheckedYesNoShift>0</DefaultCheckedYesNoShift>
+	</Shift>
+	<DatesTime>
+		<PosY>530</PosY>
+	</DatesTime>
+</Document>
