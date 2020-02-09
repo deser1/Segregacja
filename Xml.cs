@@ -7,13 +7,13 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace XMLIK
+namespace Segregacja
 {
     [XmlRoot("Document")]
     public class Document
     {
-        [XmlElement("PositionTopLeft")]
-        public int PositionTopLeft { get; set; }
+        [XmlElement("Position_TopLeft")]
+        public int Position_TopLeft { get; set; }
         [XmlElement("Width")]
         public int Width { get; set; }
         [XmlElement("Height")]
@@ -26,8 +26,8 @@ namespace XMLIK
         public NumberLine NumberLine { get; set; }
         [XmlElement("Shift")]
         public Shift Shifts { get; set; }
-        [XmlElement("DateTime")]
-        public DatesTime DateTime { get; set; }
+        [XmlElement("DatesTime")]
+        public DatesTime DatesTime { get; set; }
     }
 
     public class NumberLine

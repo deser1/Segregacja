@@ -47,7 +47,7 @@ namespace Segregacja
                 xmlSerializer.UnknownAttribute += new XmlAttributeEventHandler(XmlSerializer_UnknownAttribute);
                 StreamReader reader = new StreamReader(@XmlPath);
                 Document document = (Document)xmlSerializer.Deserialize(reader);
-                MessageBox.Show("AAAAAAAAA", "TEST", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("AAAAAAAAA", "TEST", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch(Exception ex)
             {
@@ -81,7 +81,8 @@ namespace Segregacja
             var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
             var version = fieVersionInfo.FileVersion;
             Text = "Segregacja v."+version;
-            LoadXML(appPath + "\\" + "document.xml");
+            XmlPath = appPath + "\\" + "document.xml";
+            LoadXML(XmlPath);
         }
 
         private void SegregacjaPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
