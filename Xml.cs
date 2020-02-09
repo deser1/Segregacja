@@ -7,7 +7,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace Segregacja
+namespace XMLIK
 {
     [XmlRoot("Document")]
     public class Document
@@ -19,23 +19,31 @@ namespace Segregacja
         [XmlElement("Height")]
         public int Height { get; set; }
         [XmlElement("Title")]
-        public Title Titles;
+        public Title Titles { get; set; }
         [XmlElement("BootleType")]
         public BootleType BootleTypes { get; set; }
+        [XmlElement("NumberLine")]
+        public NumberLine NumberLine { get; set; }
         [XmlElement("Shift")]
         public Shift Shifts { get; set; }
         [XmlElement("DateTime")]
-        public DatesTime DateTimes { get; set; }
+        public DatesTime DateTime { get; set; }
     }
-    
-    [XmlRoot]
+
+    public class NumberLine
+    {
+        [XmlElement("Param")]
+        public List<Param> Params { get; set; }
+    }
+
+    //[XmlRoot]
     public class DatesTime
     {
         [XmlElement("PosY")]
         public int PosY { get; set; }
     }
 
-    [XmlRoot]
+    //[XmlRoot]
     public class Shift
     {
         [XmlElement("Title")]
@@ -52,14 +60,14 @@ namespace Segregacja
         public int DefaultCheckedYesNoShift { get; set; }
     }
 
-    [XmlRoot]
+    //[XmlRoot]
     public class Number
     {
         [XmlElement("Param")]
-        [XmlElement(IsNullable = false)]
+        //[XmlElement(IsNullable = false)]
         public List<Param> Params { get; set; }
     }
-    [XmlRoot]
+    //[XmlRoot]
     public class BootleType
     {
         [XmlElement("PosY")]
@@ -68,11 +76,11 @@ namespace Segregacja
         public Item Items { get; set; }
     }
 
-    [XmlRoot]
+    //[XmlRoot]
     public class Item
     {
         [XmlElement("Param")]
-        [XmlElement(IsNullable = false)]
+        //[XmlElement(IsNullable = false)]
         public List<Param> Params { get; set; }
     }
 
@@ -85,7 +93,7 @@ namespace Segregacja
         public string Name { get; set; }
     }
 
-    [XmlRoot]
+    //[XmlRoot]
     public class Title
     {
         [XmlElement("PosY")]
