@@ -21,33 +21,43 @@ namespace Segregacja
         private String ShiftNumberText;
         private readonly String appPath = Path.GetDirectoryName(Application.ExecutablePath);
         private String XmlPath { get; set; }
-        //private XmlTextReader reader = null;
+        private Document xml;
+        private XmlTextReader XmlRead = null;
+        private String[] ElementName;
+        private String[] SubElementName;
+        private String[] TextName;
 
         protected void LoadXML(String filename)
         {
+            int i = 0;
             try
             {
                 XmlPath = filename;
-                /*reader = new XmlTextReader(XmlPath);
-                reader.MoveToContent();
-                String ElementName = "";
-                String SubElementName = "";
-                if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "document"))
+                XmlRead = new XmlTextReader(XmlPath);
+                XmlRead.MoveToContent();
+                
+                if ((XmlRead.NodeType == XmlNodeType.Element) && (XmlRead.Name == "document"))
                 {
-                    while (reader.Read())
+                    while (XmlRead.Read())
                     {
-                        if (reader.NodeType == XmlNodeType.Element)
+                        i++;
+                        if (XmlRead.NodeType == XmlNodeType.Element)
                         {
-                            ElementName = reader.Name;
+                            //Read element name node
+                            ElementName[i] = XmlRead.Name;
+                            //Read text element properities
+                            if (XmlRead.NodeType == XmlNodeType.Text){
+                                TextName[i] = XmlRead.Value;
+                            }
                         }
                     }
-                }*/
+                }
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(Document));
                 xmlSerializer.UnknownNode += new XmlNodeEventHandler(XmlSerializer_UnknownNode);
                 xmlSerializer.UnknownAttribute += new XmlAttributeEventHandler(XmlSerializer_UnknownAttribute);
                 StreamReader reader = new StreamReader(@XmlPath);
-                Document document = (Document)xmlSerializer.Deserialize(reader);
-                //MessageBox.Show("AAAAAAAAA", "TEST", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                xml = (Document)xmlSerializer.Deserialize(reader);
+                reader.Close();
             }
             catch(Exception ex)
             {
@@ -76,6 +86,13 @@ namespace Segregacja
             SegregacjaPrintPreviewControl.Document = SegregacjaPrintDocument;
             BootleType.SelectedIndex = 0;
             ShiftNumber.SelectedIndex = 0;
+            //Load BootleType in ComboBox
+            //xml = new Document();
+            //while (xml.BootleTypes.Items>0)
+            //{
+
+            //}
+            BootleType.Items.Add("test");
             DateComboBox.Value = DateTime.Now;
             System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
             var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
