@@ -23,9 +23,9 @@ namespace Segregacja
         private String XmlPath { get; set; }
         private Document xml;
         private XmlTextReader XmlRead = null;
-        private String[] ElementName;
-        private String[] SubElementName;
-        private String[] TextName;
+        private List<string> ElementName;
+        private List<string> SubElementName;
+        private List<string> TextName;
 
         protected void LoadXML(String filename)
         {
@@ -36,19 +36,32 @@ namespace Segregacja
                 XmlRead = new XmlTextReader(XmlPath);
                 XmlRead.MoveToContent();
                 
-                if ((XmlRead.NodeType == XmlNodeType.Element) && (XmlRead.Name == "document"))
+                if ((XmlRead.NodeType == XmlNodeType.Element) && (XmlRead.Name == "Document"))
                 {
+                    /*while (XmlRead.Read())
+                    {
+                        if (XmlRead.NodeType == XmlNodeType.Element)
+                        {
+                            ElementName = new string[i];
+                            //Count Element
+                            i++;
+                        }
+                    }*/
+                    ElementName = new List<string>();
+                    TextName = new List<string>();
                     while (XmlRead.Read())
                     {
-                        i++;
                         if (XmlRead.NodeType == XmlNodeType.Element)
                         {
                             //Read element name node
-                            ElementName[i] = XmlRead.Name;
+                            ElementName.Add(XmlRead.Name);
+                            
                             //Read text element properities
-                            if (XmlRead.NodeType == XmlNodeType.Text){
-                                TextName[i] = XmlRead.Value;
+                            if (XmlRead.NodeType == XmlNodeType.Text)
+                            {
+                                TextName.Add(XmlRead.Value);
                             }
+                            i++;
                         }
                     }
                 }
@@ -57,7 +70,8 @@ namespace Segregacja
                 xmlSerializer.UnknownAttribute += new XmlAttributeEventHandler(XmlSerializer_UnknownAttribute);
                 StreamReader reader = new StreamReader(@XmlPath);
                 xml = (Document)xmlSerializer.Deserialize(reader);
-                reader.Close();
+                if (reader != null)
+                    reader.Close();
             }
             catch(Exception ex)
             {
