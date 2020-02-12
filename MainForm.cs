@@ -55,9 +55,10 @@ namespace Segregacja
                         {
                             //Read element name node
                             ElementName.Add(XmlRead.Name);
-                            
+
+                            XmlRead.Read();
                             //Read text element properities
-                            if (XmlRead.NodeType == XmlNodeType.Text)
+                            if ((XmlRead.NodeType == XmlNodeType.Text) && (XmlRead.HasValue))
                             {
                                 TextName.Add(XmlRead.Value);
                             }
