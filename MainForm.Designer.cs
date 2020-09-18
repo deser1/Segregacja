@@ -177,6 +177,7 @@
             this.SegregacjaRestoreDate.Size = new System.Drawing.Size(51, 50);
             this.SegregacjaRestoreDate.TabIndex = 11;
             this.SegregacjaRestoreDate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ballonTip.SetToolTip(this.SegregacjaRestoreDate, "Resetuj do aktualnej daty");
             this.SegregacjaRestoreDate.UseVisualStyleBackColor = true;
             this.SegregacjaRestoreDate.Click += new System.EventHandler(this.SegregacjaRestoreDate_Click);
             // 
@@ -245,6 +246,7 @@
             this.zoomout.Size = new System.Drawing.Size(51, 50);
             this.zoomout.TabIndex = 9;
             this.zoomout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ballonTip.SetToolTip(this.zoomout, "Pomniejsz podgląd");
             this.zoomout.UseVisualStyleBackColor = true;
             this.zoomout.Click += new System.EventHandler(this.Zoomout_Click);
             // 
@@ -269,6 +271,7 @@
             this.btnPrint.Size = new System.Drawing.Size(51, 50);
             this.btnPrint.TabIndex = 10;
             this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ballonTip.SetToolTip(this.btnPrint, "Wydrukuj stronę");
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
@@ -321,8 +324,7 @@
             // 
             // ballonTip
             // 
-            this.ballonTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ballonTip.ToolTipTitle = "Info";
+            this.ballonTip.IsBalloon = true;
             // 
             // MainForm
             // 
