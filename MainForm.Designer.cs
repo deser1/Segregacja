@@ -54,6 +54,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuNotifyClose = new System.Windows.Forms.ToolStripMenuItem();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.ballonTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -230,6 +231,7 @@
             this.zoomin.Size = new System.Drawing.Size(51, 48);
             this.zoomin.TabIndex = 8;
             this.zoomin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ballonTip.SetToolTip(this.zoomin, "Powiększ podgląd");
             this.zoomin.UseVisualStyleBackColor = true;
             this.zoomin.Click += new System.EventHandler(this.Zoomin_Click);
             // 
@@ -317,6 +319,11 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // ballonTip
+            // 
+            this.ballonTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ballonTip.ToolTipTitle = "Info";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +378,7 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button SegregacjaRestoreDate;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolTip ballonTip;
     }
 }
 
