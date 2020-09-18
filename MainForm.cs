@@ -112,7 +112,8 @@ namespace Segregacja
             System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
             var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
             var version = fieVersionInfo.FileVersion;
-            Text = "Segregacja v."+version;
+            Text = "Segregacja v." + version;
+            SegregacjaNotifyIcon.BalloonTipText = "Segregacja v." + version;
             XmlPath = appPath + "\\" + "document.xml";
             LoadXML(XmlPath);
         }

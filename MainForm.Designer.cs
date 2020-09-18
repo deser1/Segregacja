@@ -277,6 +277,9 @@
             // 
             // SegregacjaNotifyIcon
             // 
+            this.SegregacjaNotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.SegregacjaNotifyIcon.BalloonTipText = "Segregacja v.1.0";
+            this.SegregacjaNotifyIcon.BalloonTipTitle = "Info";
             this.SegregacjaNotifyIcon.ContextMenuStrip = this.SegregacjaMenuNotify;
             this.SegregacjaNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("SegregacjaNotifyIcon.Icon")));
             this.SegregacjaNotifyIcon.Text = "Segregacja";
@@ -340,7 +343,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Segregacja v.0.1";
+            this.Text = "Segregacja v.1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);

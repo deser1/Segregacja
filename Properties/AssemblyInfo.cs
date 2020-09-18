@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // Ogólne informacje o zestawie są kontrolowane poprzez następujący 
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
-[assembly: AssemblyTitle("Segregacja")]
+[assembly: AssemblyTitle("Segregacja v.1.0")]
 [assembly: AssemblyDescription("Program do wydruku etykiet segregacji na palety")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Domek Software")]
