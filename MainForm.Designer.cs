@@ -282,8 +282,8 @@
             this.SegregacjaNotifyIcon.BalloonTipTitle = "Info";
             this.SegregacjaNotifyIcon.ContextMenuStrip = this.SegregacjaMenuNotify;
             this.SegregacjaNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("SegregacjaNotifyIcon.Icon")));
-            this.SegregacjaNotifyIcon.Text = "Segregacja";
             this.SegregacjaNotifyIcon.Visible = true;
+            this.SegregacjaNotifyIcon.BalloonTipShown += new System.EventHandler(this.SegregacjaNotifyIcon_BalloonTipShown);
             // 
             // SegregacjaMenuNotify
             // 

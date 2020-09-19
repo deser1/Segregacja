@@ -53,8 +53,8 @@
   </application>
   -->
   <!-- Włącz motywy dla typowych formantów systemu Windows i okien dialogowych (system Windows XP i nowsze) -->
-  
-  <dependency>
+
+  <!--<dependency>
     <dependentAssembly>
       <assemblyIdentity
           type="win32"
@@ -65,6 +65,6 @@
           language="*"
         />
     </dependentAssembly>
-  </dependency>
+  </dependency>-->
   
 </assembly>

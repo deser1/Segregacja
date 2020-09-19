@@ -1,4 +1,5 @@
 ﻿//using Ext.Net;
+using Ext.Net;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Segregacja
 {
@@ -26,6 +28,13 @@ namespace Segregacja
         private List<string> ElementName;
         private List<string> SubElementName;
         private List<string> TextName;
+        public static string AppVersion()
+        {
+            System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+            var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
+            var version = fieVersionInfo.FileVersion;
+            return version;
+        }
 
         protected void LoadXML(String filename)
         {
@@ -109,11 +118,14 @@ namespace Segregacja
             //}
             BootleType.Items.Add("test");
             DateComboBox.Value = DateTime.Now;
-            System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
-            var version = fieVersionInfo.FileVersion;
+            //System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+            //var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
+            //var version = fieVersionInfo.FileVersion;
+            string version = MainForm.AppVersion();
             Text = "Segregacja v." + version;
             SegregacjaNotifyIcon.BalloonTipText = "Segregacja v." + version;
+            SegregacjaNotifyIcon.Text = "Segregacja v." + version;
+            
             XmlPath = appPath + "\\" + "document.xml";
             LoadXML(XmlPath);
         }
@@ -221,5 +233,16 @@ namespace Segregacja
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
+
+        private void SegregacjaNotifyIcon_BalloonTipShown(object sender, EventArgs e)
+        {
+            //SegregacjaNotifyIcon.Icon = SystemIcons.Exclamation;
+            SegregacjaNotifyIcon.BalloonTipTitle = "Balloon Tip Title";
+            SegregacjaNotifyIcon.BalloonTipText = "Balloon Tip Text.";
+            SegregacjaNotifyIcon.BalloonTipIcon = ToolTipIcon.Info;
+            SegregacjaNotifyIcon.Visible = true;
+            SegregacjaNotifyIcon.ShowBalloonTip(30000);
+        }
+
     }
 }

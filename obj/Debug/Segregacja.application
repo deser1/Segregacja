@@ -14,14 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Segregacja.exe.manifest" size="8721">
+    <dependentAssembly dependencyType="install" codebase="Segregacja.exe.manifest" size="8686">
       <assemblyIdentity name="Segregacja.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kf3i9hfMEs984t5w4d9siRz1l1xu5i9CgWjxJiOODu0=</dsig:DigestValue>
+        <dsig:DigestValue>qM1Ie/G8IX7TX7pOFsuLHip+MEcgpxXrmxU6jgHjOPo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

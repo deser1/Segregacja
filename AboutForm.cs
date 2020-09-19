@@ -25,9 +25,10 @@ namespace Segregacja
 
         private void AboutForm_Load(object sender, EventArgs e)
         {
-            System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
-            var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
-            var version = fieVersionInfo.FileVersion;
+            //System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
+            //var fieVersionInfo = FileVersionInfo.GetVersionInfo(executingAssembly.Location);
+            //var version = fieVersionInfo.FileVersion;
+            string version = MainForm.AppVersion();
             Text = "Segregacja v." + version;
             lblVersion.Text = "Segregacja v." + version;
         }
