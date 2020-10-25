@@ -116,6 +116,7 @@ namespace Segregacja
             //{
 
             //}
+            //Add dynamic item in combobox bootle
             BootleType.Items.Add("test");
             DateComboBox.Value = DateTime.Now;
             //System.Reflection.Assembly executingAssembly = System.Reflection.Assembly.GetExecutingAssembly();
