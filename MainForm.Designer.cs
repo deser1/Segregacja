@@ -53,7 +53,7 @@
             this.MenuNotifyPrint = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuNotifyClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.SegregacjaPrintDialog = new System.Windows.Forms.PrintDialog();
             this.ballonTip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -85,6 +85,7 @@
             "NOWY ŻYWIEC",
             "OBCE",
             "OKOCIM",
+            "SKRZYNKI DO LIKWIDACJI",
             "STARY ŻYWIEC"});
             this.BootleType.Location = new System.Drawing.Point(15, 36);
             this.BootleType.Name = "BootleType";
@@ -321,9 +322,9 @@
             this.MenuNotifyClose.Text = "&Zamknij";
             this.MenuNotifyClose.Click += new System.EventHandler(this.MenuNotifyClose_Click);
             // 
-            // printDialog1
+            // SegregacjaPrintDialog
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.SegregacjaPrintDialog.UseEXDialog = true;
             // 
             // ballonTip
             // 
@@ -382,7 +383,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuNotifyClose;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button SegregacjaRestoreDate;
-        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintDialog SegregacjaPrintDialog;
         private System.Windows.Forms.ToolTip ballonTip;
     }
 }

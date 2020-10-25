@@ -215,8 +215,8 @@ namespace Segregacja
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {
-            printDialog1.Document = SegregacjaPrintDocument;
-            if (printDialog1.ShowDialog() == DialogResult.OK)
+            SegregacjaPrintDialog.Document = SegregacjaPrintDocument;
+            if (SegregacjaPrintDialog.ShowDialog() == DialogResult.OK)
             {
                 SegregacjaPrintDocument.Print();
             }
